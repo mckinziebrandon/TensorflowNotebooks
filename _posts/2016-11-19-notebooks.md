@@ -12,16 +12,16 @@ Here are some notebooks:
 
 * [Some tutorials from a tensorflow book I have.]({{site.baseurl}}/assets/TFTextbook.html)
 * [Miscellaneous tutorials I've gone through online.]({{site.baseurl}}/assets/TensorflowExamples.html)
-* [TFLearn tutorials and Early Stopping practice.]({{site.baseurl}}/assets/TFlearnOnly.html)
+* [TFLearn tutorials and Early Stopping practice.]({{site.baseurl}}/assets/TFLearnOnly.html)
 
 
 Embed code-snippet test:
 
 {% highlight python %}
 
-    def on_epoch_end(self, training_state):
-        self.accuracies.append(training_state.global_acc)
-        if training_state.val_acc is not None and training_state.val_acc < self.acc_thresh:
-            raise StopIteration
+def on_epoch_end(self, training_state):
+    self.accs.append(training_state.global_acc)
+    if training_state.val_acc is not None and training_state.val_acc < self.acc_thresh:
+        raise StopIteration
      
 {% endhighlight %}
