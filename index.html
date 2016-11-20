@@ -5,12 +5,22 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
+  {% if post.external-url %}
+      <div class="post">
+        <h1 class="post-title">
+          <a href="{{ post.external-url }}">
+              {{ post.title }}
+          </a>
+        </h1>
+        </div>
+  {% else %}
   <div class="post">
     <h1 class="post-title">
       <a href="{{ site.baseurl }}/{{ post.url }}">
         {{ post.title }}
       </a>
     </h1>
+  {% endif %}
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
