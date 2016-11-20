@@ -8,6 +8,11 @@ title: The Notebooks
     A nice box.
 </div>
 
+Here are some notebooks:
+
+* [Some tutorials from a tensorflow book I have.]({{site.baseurl}}/assets/TFTextbook.html)
+* <a href="{{site.baseurl}}/assets/TFTextbook.html">testing</a>
+
 
 {% highlight js %}
 import tensorflow as tf
