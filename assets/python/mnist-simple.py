@@ -35,16 +35,6 @@ out_readin1 = input_data(shape=[None,28,28,1])
 out_fully_connected2 = fully_connected(out_readin1, 10)
 out_softmax3 = fully_connected(out_fully_connected2, 10, activation='softmax')
 
-validation_metrics = {"accuracy": tf.contrib.metrics.streaming_accuracy,
-                        "precision": tf.contrib.metrics.streaming_precision,
-                        "recall": tf.contrib.metrics.streaming_recall}
-
-validation_monitor = tf.contrib.learn.monitors.ValidationMonitor(
-                                test_set.data,
-                                test_set.target,
-                                every_n_steps=50,
-                                metrics=validation_metrics)
-
 network=out_softmax3
 hash='f0c188c3777519fb93f1a825ca758a0c'
 scriptid='MNIST-f0c188c3777519fb93f1a825ca758a0c'
