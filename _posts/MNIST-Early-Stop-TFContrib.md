@@ -1,7 +1,5 @@
----
-title: Solution for Simple Early Stopping with TFLearn
-layout: post
----
+
+# Now Trying with TFLearn
 
 ## It Works! Here's How. 
 
@@ -111,6 +109,7 @@ I show a proof-of-concept version of early stopping below. This is the simplest 
 
 
 ```python
+import tflearn
 class EarlyStoppingCallback(tflearn.callbacks.Callback):
     def __init__(self, val_acc_thresh):
         """ Note: We are free to define our init function however we please. """
@@ -138,6 +137,9 @@ class EarlyStoppingCallback(tflearn.callbacks.Callback):
 # Initialize our callback with desired accuracy threshold.  
 early_stopping_cb = EarlyStoppingCallback(val_acc_thresh=0.5)
 ```
+
+    hdf5 not supported (please install/reinstall h5py)
+
 
 # Result: Train the Model and Stop Early
 
@@ -216,6 +218,7 @@ network = regression(out_softmax3,
                      learning_rate=0.01, 
                      loss='categorical_crossentropy', 
                      name='target')
+
 model = tflearn.DNN(network, tensorboard_verbose=3)
 try:
     model.fit(X, Y, n_epoch=1, validation_set=(testX, testY), 
@@ -244,3 +247,7 @@ print("ROC AUC Score:", auc)
     ROC AUC Score: 0.992379719297
 
 
+
+```python
+
+```
